@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chess</title>
+  <meta charset="utf-8" />
+</head>
+<style>
+  * {
+    margin: auto;
+    font-family: Arial;
+    text-align: center;
+    dis
+  }
+
+  body {
+    padding: 1em;
+  }
+
+  #board {
+    border-spacing: 0;
+    border: 4px solid #000;
+  }
+
+  td {
+    height: 80px;
+    width: 80px;
+    font-size: 1em;
+    background: none;
+    /* border: 1px solid #000; */
+  }
+  tr {}
+</style>
+<body onload="StartGame()">
+  <h2 id="turn">White turn</h2>
+  <table id="board">
+    <tr>
+      <td><img id="00"></td>
+      <td><img id="10"></img></td>
+      <td><img id="20"></img></td>
+      <td><img id="30"></img></td>
+      <td><img id="40"></img></td>
+      <td><img id="50"></img></td>
+      <td><img id="60"></img></td>
+      <td><img id="70"></img></td>
+    </tr>
+    <tr>
+        <td><img id="01"></td>
+        <td><img id="11"></img></td>
+        <td><img id="21"></img></td>
+        <td><img id="31"></img></td>
+        <td><img id="41"></img></td>
+        <td><img id="51"></img></td>
+        <td><img id="61"></img></td>
+        <td><img id="71"></img></td>
+    </tr>
+    <tr>
+        <td><img id="02"></td>
+        <td><img id="12"></img></td>
+        <td><img id="22"></img></td>
+        <td><img id="32"></img></td>
+        <td><img id="42"></img></td>
+        <td><img id="52"></img></td>
+        <td><img id="62"></img></td>
+        <td><img id="72"></img></td>
+    </tr>
+    <tr>
+        <td><img id="03"></td>
+        <td><img id="13"></img></td>
+        <td><img id="23"></img></td>
+        <td><img id="33"></img></td>
+        <td><img id="43"></img></td>
+        <td><img id="53"></img></td>
+        <td><img id="63"></img></td>
+        <td><img id="73"></img></td>
+    </tr>
+    <tr>
+        <td><img id="04"></td>
+        <td><img id="14"></img></td>
+        <td><img id="24"></img></td>
+        <td><img id="34"></img></td>
+        <td><img id="44"></img></td>
+        <td><img id="54"></img></td>
+        <td><img id="64"></img></td>
+        <td><img id="74"></img></td>
+    </tr>
+    <tr>
+        <td><img id="05"></td>
+        <td><img id="15"></img></td>
+        <td><img id="25"></img></td>
+        <td><img id="35"></img></td>
+        <td><img id="45"></img></td>
+        <td><img id="55"></img></td>
+        <td><img id="65"></img></td>
+        <td><img id="75"></img></td>
+    </tr>
+    <tr>
+        <td><img id="06"></td>
+        <td><img id="16"></img></td>
+        <td><img id="26"></img></td>
+        <td><img id="36"></img></td>
+        <td><img id="46"></img></td>
+        <td><img id="56"></img></td>
+        <td><img id="66"></img></td>
+        <td><img id="76"></img></td>
+    </tr>
+    <tr>
+        <td><img id="07"></td>
+        <td><img id="17"></img></td>
+        <td><img id="27"></img></td>
+        <td><img id="37"></img></td>
+        <td><img id="47"></img></td>
+        <td><img id="57"></img></td>
+        <td><img id="67"></img></td>
+        <td><img id="77"></img></td>
+    </tr>
+  </table>
+</body>
+<script src="app.js"></script>
+</html>
