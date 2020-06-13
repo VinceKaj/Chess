@@ -11,12 +11,15 @@ document.addEventListener('click', function (event) // records click
 
 }, false);
 
+const alpha = "abcdefgh"; // used to illustrate x coordinate on the board with letters
+
 let board = [], // 2D arrays cannot be defined in JS
     turn = true; // true = white
     startPos = [0,0], // x, y of old position in move
     endPos = [0,0], // x, y of new position in move
     figure = "", // figure of piece (e.g. "knight1" = black pawn)
-    selected = " "; // currently selected square
+    selected = " ", // currently selected square
+    simpleMoveDisplay = false; // method of displaying moves
 
 function StartGame()
 {
@@ -95,6 +98,8 @@ function Move() // makes move, displays move
 
       id("turn").innerHTML = (turn ? "White" : "Black") + " turn"; // displayes player's turn
 
+      AddMove();
+
       board[endPos[0]][endPos[1]] = board[startPos[0]][startPos[1]]; // sets new position on game board
       board[startPos[0]][startPos[1]] = " "; // removes old position on game board
       figure = ""; // resets selected piece
@@ -105,6 +110,34 @@ function Move() // makes move, displays move
       console.log("move " + startPos[0] + startPos[1] + " to " + endPos[0] + endPos[1] + " is illegal.");
    }
    //figure = ""; // resets figure
+}
+
+function AddMove()
+{
+   let normalLI = document.createElement("li");
+   let simpleLI = document.createElement("li");
+
+   normalLI.appendChild(document.createTextNode("new move"));
+   simpleLI.appendChild(document.createTextNode(`${turn ? "Black" : "White"} moved ${figure.substring(1)} from ${alpha[startPos[0]]}${8-startPos[1]} to ${alpha[endPos[0]]}${8-endPos[1]}`));
+
+   id("MoveListNormal").appendChild(normalLI);
+   id("MoveListSimple").appendChild(simpleLI);
+}
+
+function ChangeDisplayType()
+{
+   simpleMoveDisplay = id("displayType").checked; // gets checkbox value
+
+   if (simpleMoveDisplay) // shows simple move list
+   {
+      id("MoveListSimple").style.display = "block";
+      id("MoveListNormal").style.display = "none";
+   }
+   else // shows normal move list
+   {
+      id("MoveListSimple").style.display = "none";
+      id("MoveListNormal").style.display = "block";
+   }
 }
 
 function CheckMove(_board, x1, y1, x2, y2) // checks if move is illegal
